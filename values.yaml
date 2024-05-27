@@ -1,0 +1,11 @@
+image:
+  repository: potatohd/autoscaler
+  tag: latest
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: true
+  name: autoscaler
+
+rbac:
+  create: true
