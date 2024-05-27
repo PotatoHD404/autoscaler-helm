@@ -19,11 +19,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - name: k3s-config
-              mountPath: /root/.kube/k3s.yaml
-              subPath: k3s.yaml
-          env:
-            - name: KUBECONFIG
-              value: /root/.kube/k3s.yaml
+              mountPath: /root/.kube/config
       volumes:
         - name: k3s-config
           hostPath:
