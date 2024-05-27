@@ -26,8 +26,8 @@ spec:
             path: /root/.kube/
             type: Directory
       nodeSelector:
-        master: ""
+        node-role.kubernetes.io/master: ""
       tolerations:
-        - key: master
+        - key: node-role.kubernetes.io/master
           operator: Exists
           effect: NoSchedule
