@@ -18,13 +18,18 @@ spec:
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
-            - name: kubeconfig
-              mountPath: /root/.kube/
+            - name: k3s-config
+              mountPath: /root/.kube/k3s.yaml
+              subPath: k3s.yaml
+          env:
+            - name: KUBECONFIG
+              value: /root/.kube/k3s.yaml
       volumes:
-        - name: kubeconfig
+        - name: k3s-config
           hostPath:
-            path: /root/.kube/
-            type: Directory
+            path: /etc/rancher/k3s/k3s.yaml
+            type: File
+      hostNetwork: true
       nodeSelector:
         node-role.kubernetes.io/master: "true"
       tolerations:

@@ -4,10 +4,9 @@ kind: ClusterRole
 metadata:
   name: {{ .Chart.Name }}
 rules:
-  - apiGroups: [""]
-    resources: ["nodes", "pods"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["apps"]
-    resources: ["deployments", "replicasets"]
-    verbs: ["get", "list", "watch", "update", "patch"]
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: ["*"]
+  - nonResourceURLs: ["*"]
+    verbs: ["*"]
 {{- end }}
