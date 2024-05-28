@@ -22,7 +22,6 @@ spec:
               mountPath: /root/.kube/config
             - name: env-file
               mountPath: /app/.env
-              subPath: .env
       volumes:
         - name: k3s-config
           hostPath:
