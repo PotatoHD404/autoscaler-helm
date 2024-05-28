@@ -20,10 +20,17 @@ spec:
           volumeMounts:
             - name: k3s-config
               mountPath: /root/.kube/config
+            - name: env-file
+              mountPath: /app/.env
+              subPath: .env
       volumes:
         - name: k3s-config
           hostPath:
             path: /etc/rancher/k3s/k3s.yaml
+            type: File
+        - name: env-file
+          hostPath:
+            path: /home/ubuntu/.env
             type: File
       hostNetwork: true
       nodeSelector:
