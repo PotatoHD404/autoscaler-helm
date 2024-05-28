@@ -3,12 +3,12 @@ entries:
   autoscaler:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-05-29T01:38:28.3972069+03:00"
+    created: "2024-05-29T02:27:14.2866557+03:00"
     description: A Helm chart for the autoscaler container
-    digest: 08744ec6d4327fb24ab13ec92946fdd454c29e4a067206e7464141ac830fe4fd
+    digest: d3322f5dc291f2c5c53c7d255f4089c524ee2ef137537fcc361872ccf61687a2
     name: autoscaler
     type: application
     urls:
     - https://potatohd404.github.io/autoscaler-helm/autoscaler-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-29T01:38:28.3932073+03:00"
+generated: "2024-05-29T02:27:14.2849099+03:00"

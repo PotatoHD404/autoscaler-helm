@@ -22,6 +22,8 @@ spec:
               mountPath: /root/.kube/config
             - name: env-file
               mountPath: /app/.env
+            - name: ssh-key
+              mountPath: /app/id_rsa.pub
       volumes:
         - name: k3s-config
           hostPath:
@@ -30,6 +32,10 @@ spec:
         - name: env-file
           hostPath:
             path: /home/ubuntu/.env
+            type: File
+        - name: ssh-key
+          hostPath:
+            path: /home/ubuntu/id_rsa.pub
             type: File
       hostNetwork: true
       nodeSelector:
