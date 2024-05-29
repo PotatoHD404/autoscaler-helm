@@ -1,7 +1,7 @@
 image:
   repository: potatohd/autoscaler
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 serviceAccount:
   create: true
